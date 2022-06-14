@@ -8,7 +8,25 @@
     <title>ToDo List</title>
 </head>
 <body>
-    <h1>Hello World!</h1>
+    <form action="/create" method="post">
+        <div>
+            <label>E-mail:</label>
+            <input type="text" name="email" placeholder="Insira seu e-mail">
+        </div>
+        <div>
+            <label>Telefone:</label>
+            <input type="text" name="telefone" placeholder="Insira seu telefone">
+        </div>
+        <button type="submit">Enviar</button>
+
+        <ul>
+            <% dadosCadastradosBD.forEach((elemento) => { %>
+            <li>
+                <%= elemento.email %>
+            </li>
+            <% }) %>
+        </ul>
+    </form>
 
     <script src="script.js"></script>
 </body>

@@ -1,11 +1,15 @@
 // Importando o Express para utilizar
 const express = require("express");
-const app = express();
 const path = require("path");
-
 const routes = require('./Routes/routes');// Importando as rotas
+const connectToDB = require('./Database/dataBase')
 
+const app = express();
 const port = 3000;
+
+connectToDB(); // Executando a função de conexão com o Banco de Dados
+
+app.use(express.urlencoded({ extended: true })); // Conseguir receber um POST
 
 // Usando as rotas criadas no arquivo do mesmo
 app.use(routes);// Usando as Rotas no Servidor
@@ -17,6 +21,9 @@ app.use(express.static(path.join(__dirname, "public")));
 app.set("view engine", "ejs");
 
 // Servidor na Porta 3000
+
 app.listen(port, () => {
     console.log(`Servidor rodando em http://localhost:${port}/home`)
 });
+
+
