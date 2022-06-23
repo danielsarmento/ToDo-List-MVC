@@ -8,25 +8,55 @@
     <title>ToDo List</title>
 </head>
 <body>
-    <form action="/create" method="post">
-        <div>
-            <label>E-mail:</label>
-            <input type="text" name="email" placeholder="Insira seu e-mail">
-        </div>
-        <div>
-            <label>Telefone:</label>
-            <input type="text" name="telefone" placeholder="Insira seu telefone">
-        </div>
-        <button type="submit">Enviar</button>
 
+    <header>
+        
+        <% if (!TarefaPorId) { %>
+        <form action="/create" method="post">
+            <div>
+                <label>Tarefa:</label>
+                <input type="text" name="tarefa" placeholder="Insira uma tarefa">
+            </div>
+
+            <button type="submit">Enviar</button>
+        </form>
+        <% } else { %>
+
+        <form action="/EditarDados/<%= TarefaPorId._id %>" method="post">
+            <div>
+                <label>Editar Tarefa:</label>
+                <input type="text" name="tarefa" value="<%= TarefaPorId.tarefa %>">
+            </div>
+
+            <button type="submit">Atualizar</button>
+        </form>
+        <% } %>
+    </header>
+    
+    <section id="tarefas">
         <ul>
-            <% dadosCadastradosBD.forEach((elemento) => { %>
+            <% dadosCadastradosBD.forEach((dadoBD) => { %>
             <li>
-                <%= elemento.email %>
+                <%= dadoBD.tarefa %>
+                <a href="/GetById/<%= dadoBD._id %>">Editar</a>
+                <a href="/ConfimDelete/<%= dadoBD._id %>">Apagar</a>
             </li>
             <% }) %>
         </ul>
-    </form>
+    </section>
+
+    <% if(TarefaDelete) { %>
+    <section id="modal">
+        <div id="card">
+            <a href="/home">X</a>
+            <h2>Confirmação</h2>
+            <hr>
+            <p>Deseja realmente apagar a tarefa: <%=TarefaDelete.tarefa%>? ></p>
+            <a href="/Delete/<%= TarefaDelete._id %>">Sim</a>
+            <a href="/home">Não</a>
+        </div>
+    </section>
+    <% } %>
 
     <script src="script.js"></script>
 </body>

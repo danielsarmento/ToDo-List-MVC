@@ -2,8 +2,7 @@ const mongoose = require('mongoose');
 
 // Limitando o estilo do dado.
 const EstruturaDados = new mongoose.Schema({
-    email: {type: String, required: true},
-    telefone: {type: Number, required: true},
+    tarefa: {type: String, required: true},
 });
 
 //Criando a coleção dentro do BD
