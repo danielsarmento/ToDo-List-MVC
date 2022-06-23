@@ -72,6 +72,7 @@ ul li{
     cursor: pointer;
     flex-wrap: wrap;
     font-size: 1.3rem;
+    border-bottom: 0.6px solid #100f10;
 }
 
 ul li:hover{
@@ -94,7 +95,7 @@ ul li a span {
 a.btnEdit{
     padding: 0.8rem 0.8rem;
     text-decoration: none;
-    transition: all .4s ease-in-out;
+    transition: all .3s ease-in-out;
 }
 a.btnEdit:hover{
     color:#3643f4;
@@ -103,7 +104,7 @@ a.btnEdit:hover{
 a.btnDelete{
     padding: 0.8rem 0.8rem;
     text-decoration: none;
-    transition: all .4s ease-in-out;
+    transition: all .3s ease-in-out;
 }
 a.btnDelete:hover{
     color:#FF0043;
@@ -172,7 +173,7 @@ div#btns a{
     color: #535353;
     background-color: #fafafa;
     border-radius: .5rem;
-    transition: all .4s ease-in-out;
+    transition: all .2s ease-in-out;
 }
 
 #btnYes{
@@ -182,5 +183,25 @@ div#btns a{
 div#btns a:hover{
     background-color: #24242489;
     color: #fff;
+}
+
+.message{
+    margin-top: 1rem;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.message-alerta{
+    background-color: rgba(255, 197, 197, 0.8);
+    color:#8a0000
+}
+.message-sucesso{
+    background-color: rgba(197, 255, 214, 0.8);
+    color: #008a1e;
+}
+
+#closeMessage{
+    cursor: pointer;
 }
 

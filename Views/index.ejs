@@ -17,9 +17,8 @@
         <form action="/create" method="post">
             <div>
                 <input type="text" name="tarefa" placeholder="Insira uma tarefa">
-                <button id="btnEnviar" type="submit">Enviar</button>
+                <button id="btnEnviar" type="submit">Adicionar</button>
             </div>
-
         </form>
         <% } else { %>
         <h1>Editar Tarefa</h1>
@@ -31,6 +30,14 @@
 
         </form>
         <% } %>
+
+        <% if(message != "") { %>
+        <section class="message message-<%=type%>">
+            <p><%= message %></p>
+            <span><i id="closeMessage" class="bi bi-x-circle-fill"></i></span>
+        </section>
+        <% } %>
+
     </header>
     
     <section id="tarefas">
