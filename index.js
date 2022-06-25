@@ -3,9 +3,10 @@ const express = require("express");
 const path = require("path");
 const routes = require('./Routes/routes');// Importando as rotas
 const connectToDB = require('./Database/dataBase')
+require('dotenv').config();
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT;
 
 connectToDB(); // Executando a função de conexão com o Banco de Dados
 
