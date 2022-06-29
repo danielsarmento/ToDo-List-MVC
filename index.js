@@ -24,7 +24,7 @@ app.set("view engine", "ejs");
 // Servidor na Porta 3000
 
 app.listen(port, () => {
-    console.log(`Servidor rodando em http://localhost:${port}/home`)
+    console.log(`Servidor rodando na porta: ${port}`)
 });
 
 

@@ -44,7 +44,7 @@
         <ul>
             <% dadosCadastradosBD.forEach((dadoBD) => { %>
             <li>
-                <a href="/home"><%= dadoBD.tarefa %> <span>Criado em: 23/06/2022</span></a>
+                <a href="/"><%= dadoBD.tarefa %> <span>Criado em: 23/06/2022</span></a>
                     <div>
                         <a class="btnEdit" href="/GetById/<%= dadoBD._id %>"><i class="bi bi-pencil-square"></i></a>
                         <a class="btnDelete" href="/ConfimDelete/<%= dadoBD._id %>"><i class="bi bi-trash3"></i></a>
@@ -59,14 +59,14 @@
         <div id="card">
             <div id="confirmacao">
                 <h2>Confirmação</h2>
-                <a id="btnclose" href="/home"><i class="bi bi-x-circle-fill"></i></i></a>
+                <a id="btnclose" href="/"><i class="bi bi-x-circle-fill"></i></i></a>
             </div>
             
             <hr>
             <p>Deseja realmente apagar a tarefa: <%=TarefaDelete.tarefa%>? ></p>
             <div id="btns">
                 <a id="btnYes" href="/Delete/<%= TarefaDelete._id %>">Sim</a>
-                <a id="btnNot" href="/home">Não</a>
+                <a id="btnNot" href="/">Não</a>
             </div>
             
         </div>

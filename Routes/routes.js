@@ -1,7 +1,7 @@
 const routes = require('express').Router();
 const taskController = require('../Controller/taskController');
 
-routes.get("/home", taskController.home);
+routes.get("/", taskController.home);
 routes.post('/create', taskController.InserindoNoBD);
 
 routes.get('/GetById/:id', taskController.GetById);
