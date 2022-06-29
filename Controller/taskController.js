@@ -11,7 +11,7 @@ exports.home = async (req, res) => {
       type = "";
     }, 1000)
     const dadosCadastradosBD = await DadosDeCadastro.find();
-    return res.render('index', {
+    return res.render('./index', {
       dadosCadastradosBD, 
       TarefaPorId: null, 
       TarefaDelete: null,
@@ -50,7 +50,7 @@ exports.GetById = async (req, res) => {
 try{
   const TarefaPorId = await DadosDeCadastro.findOne({_id: req.params.id});
   const dadosCadastradosBD = await DadosDeCadastro.find();
-  res.render('index', {
+  res.render('./index', {
     TarefaPorId, 
     dadosCadastradosBD, 
     TarefaDelete: null,
@@ -80,7 +80,7 @@ exports.ConfirmDeleteTarefa = async (req, res) => {
   try{
     const TarefaDelete = await DadosDeCadastro.findOne({_id: req.params.id});
     const dadosCadastradosBD = await DadosDeCadastro.find();
-    res.render('index', {
+    res.render('./index', {
       TarefaPorId: null, 
       dadosCadastradosBD, 
       TarefaDelete,
