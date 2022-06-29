@@ -6,7 +6,7 @@ const connectToDB = require('./Database/dataBase')
 require('dotenv').config();
 
 const app = express();
-const port = process.env.PORT;
+const PORT = process.env.PORT;
 
 connectToDB(); // Executando a função de conexão com o Banco de Dados
 
@@ -23,8 +23,8 @@ app.set("view engine", "ejs");
 
 // Servidor na Porta 3000
 
-app.listen(port, () => {
-    console.log(`Servidor rodando na porta: ${port}`)
+app.listen(PORT, () => {
+    console.log(`Servidor rodando na porta: ${PORT}`)
 });
 
 
